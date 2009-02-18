@@ -1,0 +1,51 @@
+<% attrs_clean = attrs.clone %>
+<% attrs_clean.delete :path_vkontakte %>
+
+
+<% if movies.length == 1 %>
+
+	<div class="result clearFix"  style="border-top-width:1px">
+	 <table cellpadding=0 cellspacing=0 border=0>
+	  <tr>   
+	   <td width="545px" style="vertical-align:top">
+	    <div style="padding-top:5px">
+      
+	     <div class="aname">
+          <a href=" <%= movies[0].url %> ">
+            <%= ' ' + movies[0].to_s(attrs_clean) %>
+          </a>
+	     </div>
+       
+       <div class="adesc"><%= title %></div>
+       
+	    </div>	
+	   </td>
+	  </tr>
+	 </table>
+	</div>
+	
+<% else %>
+
+	<div class="result clearFix"  style="border-top-width:1px">
+	 <table cellpadding=0 cellspacing=0 border=0>
+	  <tr>   
+	   <td width="545px" style="vertical-align:top">
+	    <div style="padding-top:5px">
+      
+	     <div class="adesc"><%= title %>:</div>
+       
+        <% movies.each do |m| %>
+          <div class="aname">
+            <a href=" <%= m.url %> ">
+              <%= ' ' + m.to_s(attrs_clean) %>
+            </a>
+          </div>      
+        <% end %>  
+       
+	    </div>
+	   </td>
+	  </tr>
+	 </table>
+	</div>
+	
+<% end %>

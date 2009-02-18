@@ -1,0 +1,4 @@
+<% if level == 0 %><%= '-' * title.length %>
+<%= title %>
+<%= '-' * title.length %>
+<% else %> <%= title %>: <% end %>

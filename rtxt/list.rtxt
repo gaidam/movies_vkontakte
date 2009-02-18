@@ -1,0 +1,6 @@
+<% if movies.length == 1 %><%= title %>: <%= movies[0].to_s(attrs) %>
+<% else %>
+<%= title %>:
+<% movies.each do |m| %><%= m.to_s(attrs) %>
+<% end %>      
+<% end %>
